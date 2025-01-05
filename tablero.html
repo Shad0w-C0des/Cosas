@@ -1,67 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Tablero de Ajedrez</title>
-    <!-- Cargar estilos de Chessboard.js -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chessboard-js/1.0.0/chessboard-1.0.0.min.css">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin-top: 20px;
-        }
-        #board {
-            margin: auto;
-            width: 400px;
-        }
-    </style>
+    <title>Prueba de Tablero</title>
 </head>
 <body>
-    <h1>Tablero de Ajedrez</h1>
-    <div id="board" style="width: 400px;"></div>
-    <p id="status">Arrastra las piezas para moverlas.</p>
-
-    <!-- Cargar Chess.js para validar movimientos -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/0.13.4/chess.min.js"></script>
-    <!-- Cargar Chessboard.js para el tablero -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/chessboard-js/1.0.0/chessboard-1.0.0.min.js"></script>
-
-    <script>
-        const game = new Chess();
-
-        const board = Chessboard('board', {
-            draggable: true,
-            position: 'start',
-            onDrop: handleMove,
-        });
-
-        function handleMove(source, target) {
-            const move = game.move({
-                from: source,
-                to: target,
-                promotion: 'q',
-            });
-
-            if (move === null) return 'snapback';
-            updateStatus();
-        }
-
-        function updateStatus() {
-            const statusElement = document.getElementById('status');
-
-            if (game.in_checkmate()) {
-                statusElement.textContent = '¡Jaque mate!';
-            } else if (game.in_draw()) {
-                statusElement.textContent = '¡Empate!';
-            } else {
-                const turn = game.turn() === 'w' ? 'blancas' : 'negras';
-                statusElement.textContent = `Turno de las ${turn}.`;
-            }
-        }
-
-        board.onSnapEnd = function () {
-            board.position(game.fen());
-        };
-    </script>
+    <h1>¡Hola! Esto es una prueba desde GitHub Pages</h1>
 </body>
 </html>
